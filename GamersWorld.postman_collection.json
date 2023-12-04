@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "49b357f7-7cc8-4505-a116-c613a5d7c0ed",
+		"name": "GamersWorld",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1401662"
+	},
+	"item": [
+		{
+			"name": "Add new Game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Carmageddon\",\n    \"point\": 7.1,\n    \"releaseYear\": 1999,\n    \"onSale\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5067/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Games",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Game by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/games/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"games",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Game by Id returns 404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/games/99999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"games",
+						"99999"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
