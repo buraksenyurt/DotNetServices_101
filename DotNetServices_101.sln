@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Data", "GamersW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.DataContext", "GamersWorld.DataContext\GamersWorld.DataContext.csproj", "{A871C945-6D39-4E5D-86A0-CB062215C926}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Service.WebApi", "GamersWorld.Service.WebApi\GamersWorld.Service.WebApi.csproj", "{F83AA1E6-218C-4E85-BB33-A7E1779DE272}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Service.Grpc", "GamersWorld.Service.Grpc\GamersWorld.Service.Grpc.csproj", "{A8445890-65BF-4F8C-87A7-BF5927FBA628}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{A871C945-6D39-4E5D-86A0-CB062215C926}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A871C945-6D39-4E5D-86A0-CB062215C926}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A871C945-6D39-4E5D-86A0-CB062215C926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83AA1E6-218C-4E85-BB33-A7E1779DE272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83AA1E6-218C-4E85-BB33-A7E1779DE272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83AA1E6-218C-4E85-BB33-A7E1779DE272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83AA1E6-218C-4E85-BB33-A7E1779DE272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
