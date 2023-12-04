@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "7cc30d12-b4f7-47a1-893b-7ade70d39ab7",
+		"name": "GamersWorld OData",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1401662"
+	},
+	"item": [
+		{
+			"name": "All games order by point desc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5073/gamebox/v1/games?$select=title,point,releaseYear&orderby=point desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5073",
+					"path": [
+						"gamebox",
+						"v1",
+						"games"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "title,point,releaseYear"
+						},
+						{
+							"key": "orderby",
+							"value": "point desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Average points by release year.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5073/gamebox/v1/games?$apply=groupby((releaseYear),aggregate(point with average as AveragePoint))",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5073",
+					"path": [
+						"gamebox",
+						"v1",
+						"games"
+					],
+					"query": [
+						{
+							"key": "$apply",
+							"value": "groupby((releaseYear),aggregate(point with average as AveragePoint))"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Average game point",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5073/gamebox/v1/games/?$apply=aggregate(Point with average as AveragePoint)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5073",
+					"path": [
+						"gamebox",
+						"v1",
+						"games",
+						""
+					],
+					"query": [
+						{
+							"key": "$apply",
+							"value": "aggregate(Point with average as AveragePoint)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top 10 Games Order By title on sale Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5073/gamebox/v1/games/?$orderby=title&$select=title,onSale&top=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5073",
+					"path": [
+						"gamebox",
+						"v1",
+						"games",
+						""
+					],
+					"query": [
+						{
+							"key": "$orderby",
+							"value": "title"
+						},
+						{
+							"key": "$select",
+							"value": "title,onSale"
+						},
+						{
+							"key": "top",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
