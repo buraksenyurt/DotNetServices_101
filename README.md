@@ -57,6 +57,7 @@ dotnet add package Grpc.Tools
 
 - Unutursan eğer swagger adresi genellikle şöyle olacaktır -> http://localhost:5199/swagger/index.html
 - Grpc proto dosyalarını ekledikten sonra bunları proje dosyasındaki ItemGroup içerisine koymayı da unutma. Ki derleme sonrası gerekli proto proxy servis içeriği otomatik olarak oluşturulsun.
+- Projenin eğitim sonunda bitirilmiş hali [final isimli branch](https://github.com/buraksenyurt/DotNetServices_101/tree/final) üstünde tutulmaktadır.
 
 ## Kaynaklar
 
