@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Service.WebApi"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Service.Grpc", "GamersWorld.Service.Grpc\GamersWorld.Service.Grpc.csproj", "{A8445890-65BF-4F8C-87A7-BF5927FBA628}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Client.Grpc", "GamersWorld.Client.Grpc\GamersWorld.Client.Grpc.csproj", "{221E6148-5F1E-40EA-A619-35B369B11445}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{221E6148-5F1E-40EA-A619-35B369B11445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{221E6148-5F1E-40EA-A619-35B369B11445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{221E6148-5F1E-40EA-A619-35B369B11445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{221E6148-5F1E-40EA-A619-35B369B11445}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
