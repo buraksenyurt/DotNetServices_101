@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
 
-namespace GamersWorld.Service.OData.Contollers;
+namespace GamersWorld.Service.OData.Controllers;
 
 public class GamesController(GamersWorldDbContext context)
     : ODataController
