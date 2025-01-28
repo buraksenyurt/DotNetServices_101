@@ -1,8 +1,7 @@
-using GamersWorld.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Azon.DataContext;
+namespace GamersWorld.DataContext;
 
 public static class AzonDbContextExtensions
 {
