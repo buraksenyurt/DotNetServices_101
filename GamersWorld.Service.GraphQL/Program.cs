@@ -7,7 +7,7 @@ builder.Services.AddGamersWorld();
 
 builder.Services
     .AddGraphQLServer()
-    .RegisterDbContext<GamersWorldDbContext>()
+    .RegisterDbContextFactory<GamersWorldDbContext>()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>();
 

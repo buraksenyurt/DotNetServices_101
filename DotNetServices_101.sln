@@ -17,13 +17,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Service.OData",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Service.GraphQL", "GamersWorld.Service.GraphQL\GamersWorld.Service.GraphQL.csproj", "{75CD1646-E596-4406-904E-54BFF6156F0A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82050386-1C39-4CDA-87E2-2936A9CF6081}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		GamersWorld OData.postman_collection.json = GamersWorld OData.postman_collection.json
+		GamersWorld.postman_collection.json = GamersWorld.postman_collection.json
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{392BF6D3-7447-46A7-8945-C29176E67F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -54,5 +59,8 @@ Global
 		{75CD1646-E596-4406-904E-54BFF6156F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75CD1646-E596-4406-904E-54BFF6156F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75CD1646-E596-4406-904E-54BFF6156F0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
