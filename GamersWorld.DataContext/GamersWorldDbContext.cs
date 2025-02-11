@@ -18,7 +18,7 @@ public partial class GamersWorldDbContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=gamersworld;Username=scoth;Password=tiger");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=gamersworld;Username=johndoe;Password=somew0rds");
         }
     }
 

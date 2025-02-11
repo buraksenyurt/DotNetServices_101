@@ -59,6 +59,71 @@ dotnet add package Grpc.Tools
 - Grpc proto dosyalarını ekledikten sonra bunları proje dosyasındaki ItemGroup içerisine koymayı da unutma. Ki derleme sonrası gerekli proto proxy servis içeriği otomatik olarak oluşturulsun.
 - Projenin eğitim sonunda bitirilmiş hali [final isimli branch](https://github.com/buraksenyurt/DotNetServices_101/tree/final) üstünde tutulmaktadır.
 
+## OData ve GraphQL Servisleri için Örnek Sorgular
+
+OData servisleri için aşağıdaki örnek sorgular kullanılabilir.
+
+```text
+http://localhost:5073/gamebox/v1/games?$select=title,point,releaseYear&orderby=point desc
+
+http://localhost:5073/gamebox/v1/games?$apply=groupby((releaseYear),aggregate(point with average as AveragePoint))
+
+http://localhost:5073/gamebox/v1/games/?$apply=aggregate(Point with average as AveragePoint)
+
+http://localhost:5073/gamebox/v1/games/?$orderby=title&$select=title,onSale&top=10
+```
+
+GraphQL servisinde de şu örnek sorgular ele alınabilir.
+
+Oyun listesi;
+
+```graphql
+query getGames{
+        games{
+            title,
+            point,
+            releaseYear,
+            onSale
+        }
+    }
+```
+
+Belli bir oyuna ait bilgiler;
+
+```graphql
+query find {
+        game(gameId: 7) {
+            title
+            onSale
+            releaseYear
+            point
+        }
+    }
+```
+
+Yeni bir oyun eklenmesi;
+
+```graphql
+mutation {
+        addGame(
+            payload: {
+            title: "Tower Defense"
+            point: 5.4
+            releaseYear: 2005
+            onSale: true
+            }
+        ) {
+            game {
+            gameId
+            title
+            onSale
+            releaseYear
+            point
+            }
+        }
+    }
+```
+
 ## Kaynaklar
 
 - Minimal Web API tasarımı için [şu öğretiye](https://learn.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-8.0&tabs=visual-studio-code) bakılabilir.

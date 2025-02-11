@@ -7,6 +7,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Data", "GamersW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.DataContext", "GamersWorld.DataContext\GamersWorld.DataContext.csproj", "{A871C945-6D39-4E5D-86A0-CB062215C926}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Service.WebApi", "GamersWorld.Service.WebApi\GamersWorld.Service.WebApi.csproj", "{F83AA1E6-218C-4E85-BB33-A7E1779DE272}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Service.Grpc", "GamersWorld.Service.Grpc\GamersWorld.Service.Grpc.csproj", "{A8445890-65BF-4F8C-87A7-BF5927FBA628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Client.Grpc", "GamersWorld.Client.Grpc\GamersWorld.Client.Grpc.csproj", "{221E6148-5F1E-40EA-A619-35B369B11445}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Service.OData", "GamersWorld.Service.OData\GamersWorld.Service.OData.csproj", "{6A6629F5-690B-4850-8452-6C5B6B2C7FB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamersWorld.Service.GraphQL", "GamersWorld.Service.GraphQL\GamersWorld.Service.GraphQL.csproj", "{75CD1646-E596-4406-904E-54BFF6156F0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82050386-1C39-4CDA-87E2-2936A9CF6081}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		GamersWorld OData.postman_collection.json = GamersWorld OData.postman_collection.json
+		GamersWorld.postman_collection.json = GamersWorld.postman_collection.json
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +39,29 @@ Global
 		{A871C945-6D39-4E5D-86A0-CB062215C926}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A871C945-6D39-4E5D-86A0-CB062215C926}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A871C945-6D39-4E5D-86A0-CB062215C926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83AA1E6-218C-4E85-BB33-A7E1779DE272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83AA1E6-218C-4E85-BB33-A7E1779DE272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83AA1E6-218C-4E85-BB33-A7E1779DE272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83AA1E6-218C-4E85-BB33-A7E1779DE272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8445890-65BF-4F8C-87A7-BF5927FBA628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{221E6148-5F1E-40EA-A619-35B369B11445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{221E6148-5F1E-40EA-A619-35B369B11445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{221E6148-5F1E-40EA-A619-35B369B11445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{221E6148-5F1E-40EA-A619-35B369B11445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6629F5-690B-4850-8452-6C5B6B2C7FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6629F5-690B-4850-8452-6C5B6B2C7FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6629F5-690B-4850-8452-6C5B6B2C7FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6629F5-690B-4850-8452-6C5B6B2C7FB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75CD1646-E596-4406-904E-54BFF6156F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CD1646-E596-4406-904E-54BFF6156F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CD1646-E596-4406-904E-54BFF6156F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CD1646-E596-4406-904E-54BFF6156F0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

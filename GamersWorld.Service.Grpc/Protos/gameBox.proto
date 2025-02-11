@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option csharp_namespace = "GamersWorld.Service.Grpc";
+
+package gameBox;
+
+service GameBox{
+
+    rpc GetGames(GetGamesRequest) returns (GetGamesReply);
+    rpc GetGame(GetGameRequest) returns (GameMessage);
+    rpc AddGame(AddGameRequest) returns (GameMessage);
+
+}
+message AddGameRequest{
+    string title = 2;
+    double point=3;
+    int32 releaseDate=4;
+    bool onSale=5;
+}
+
+message GetGamesRequest{}
+
+message GetGameRequest{
+    int32 id = 1;
+}
+
+message GetGamesReply{
+    repeated GameMessage data = 1;
+}
+
+message GameMessage {
+    int32 gameId = 1;
+    string title = 2;
+    double point=3;
+    int32 releaseDate=4;
+    bool onSale=5;
+}
