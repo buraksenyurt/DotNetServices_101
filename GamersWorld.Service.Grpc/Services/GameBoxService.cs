@@ -12,6 +12,7 @@ public class GameBoxService(ILogger<GameBoxService> logger, GamersWorldDbContext
 
     public override Task<GameMessage> GetGame(GetGameRequest request, ServerCallContext context)
     {
+        _logger.LogInformation("Get game request");
         GameMessage gameMessage = new();
 
         var game = _gamersWorldDbContext.Games.Where(g => g.GameId == request.Id).FirstOrDefault();

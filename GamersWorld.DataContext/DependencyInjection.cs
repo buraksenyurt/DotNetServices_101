@@ -11,9 +11,9 @@ public static class GamersWorldDbContextExtensions
         services.AddDbContext<GamersWorldDbContext>(options =>
             {
                 options.UseNpgsql(connStr);
-                options.LogTo(Console.WriteLine, new[] {
+                options.LogTo(Console.WriteLine, [
                     Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.CommandExecuting
-                    }
+                    ]
                 );
             });
 
