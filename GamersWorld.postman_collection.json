@@ -7,13 +7,71 @@
 	},
 	"item": [
 		{
-			"name": "Add new Game",
+			"name": "Get Token",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "gamersworld-api",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "scoth.tiger",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8380/realms/GamersWorld/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8380",
+					"path": [
+						"realms",
+						"GamersWorld",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Game",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJvdnZvZUg5bU5jcHhpbEExcDhxT0FDNUpyYlEyR0lQR1hRbnllX1dpUkdjIn0.eyJleHAiOjE3MzkyODY2OTIsImlhdCI6MTczOTI4NjM5MiwianRpIjoiZjgzMDhiODYtMWFkZi00ZDUyLTlkYTUtMjJlMTExOTk3MTAxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MzgwL3JlYWxtcy9HYW1lcnNXb3JsZCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJlODRiYmFjZC03MjRlLTQ5ZTItOWZjMC00ZWJkOTM3YTNmMzQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJnYW1lcnN3b3JsZC1hcGkiLCJzaWQiOiI1OWY3NzFlOS0zOTBmLTQzYTMtYTNmNS1mNzNiMjFiODQxY2QiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWdhbWVyc3dvcmxkIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlN1cGVyUm9sZSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlNjb3RoIFRpZ2VyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2NvdGgudGlnZXIiLCJnaXZlbl9uYW1lIjoiU2NvdGgiLCJmYW1pbHlfbmFtZSI6IlRpZ2VyIiwiZW1haWwiOiJzY290aC50aWdlckBhem9uIn0.KIMZsruFfuW2kKkOmmh--id1k_Bvc1mJgRDZbRW5GmNrsrwMSdCaCP-WsKcd4lM2MNMDs9Yx9YeP7nWjCRX9l8vabRi6rhSeh2luCmfDyiBEAulkTutOHYh0i041MUEQpl5iI_X3Ik-o9aTSo9N_cL6tZgmNNx3o2WIgaLzrSZdcuSiRgXgz9MuEmTkveslql2Mqbzc4DrvYrP1MHfEPRtWD8Of24g6w6YO8Tjv097OfqCEQ_BavOpxNQZkn62URoiCRN-4KVNQEdZfmigOGe9boHg7ar8nwfV9KkLaohtbg_AchvytNZWaaxkG_5GtWOCElP5OcFHfpY_sb6WMh0g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Carmageddon\",\n    \"point\": 7.1,\n    \"releaseYear\": 1999,\n    \"onSale\": true\n}",
+					"raw": "{\n    \"title\": \"Baldur's Gate 3\",\n    \"point\": 9.9,\n    \"releaseYear\": 2022,\n    \"onSale\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -37,6 +95,16 @@
 		{
 			"name": "Get All Games",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJvdnZvZUg5bU5jcHhpbEExcDhxT0FDNUpyYlEyR0lQR1hRbnllX1dpUkdjIn0.eyJleHAiOjE3MzkyODY2OTIsImlhdCI6MTczOTI4NjM5MiwianRpIjoiZjgzMDhiODYtMWFkZi00ZDUyLTlkYTUtMjJlMTExOTk3MTAxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MzgwL3JlYWxtcy9HYW1lcnNXb3JsZCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJlODRiYmFjZC03MjRlLTQ5ZTItOWZjMC00ZWJkOTM3YTNmMzQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJnYW1lcnN3b3JsZC1hcGkiLCJzaWQiOiI1OWY3NzFlOS0zOTBmLTQzYTMtYTNmNS1mNzNiMjFiODQxY2QiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWdhbWVyc3dvcmxkIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlN1cGVyUm9sZSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlNjb3RoIFRpZ2VyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2NvdGgudGlnZXIiLCJnaXZlbl9uYW1lIjoiU2NvdGgiLCJmYW1pbHlfbmFtZSI6IlRpZ2VyIiwiZW1haWwiOiJzY290aC50aWdlckBhem9uIn0.KIMZsruFfuW2kKkOmmh--id1k_Bvc1mJgRDZbRW5GmNrsrwMSdCaCP-WsKcd4lM2MNMDs9Yx9YeP7nWjCRX9l8vabRi6rhSeh2luCmfDyiBEAulkTutOHYh0i041MUEQpl5iI_X3Ik-o9aTSo9N_cL6tZgmNNx3o2WIgaLzrSZdcuSiRgXgz9MuEmTkveslql2Mqbzc4DrvYrP1MHfEPRtWD8Of24g6w6YO8Tjv097OfqCEQ_BavOpxNQZkn62URoiCRN-4KVNQEdZfmigOGe9boHg7ar8nwfV9KkLaohtbg_AchvytNZWaaxkG_5GtWOCElP5OcFHfpY_sb6WMh0g",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -56,10 +124,20 @@
 		{
 			"name": "Get Game by Id",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJvdnZvZUg5bU5jcHhpbEExcDhxT0FDNUpyYlEyR0lQR1hRbnllX1dpUkdjIn0.eyJleHAiOjE3MzkyODY4NDcsImlhdCI6MTczOTI4NjU0NywianRpIjoiYWI4YTVmYmEtYTU5YS00MDczLWJlNDAtMjdjZGE5M2FkZTczIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MzgwL3JlYWxtcy9HYW1lcnNXb3JsZCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjY2U2OWI2My0xMmNlLTQ0OGMtYmU3Ny02YWU2Y2MyYWY4NmYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJnYW1lcnN3b3JsZC1hcGkiLCJzaWQiOiJmZDZhMzc2ZS1mYzg1LTQ4OGUtYWFiYi0xZjgwOWU4M2U5YmIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWdhbWVyc3dvcmxkIiwiQ3VzdG9tZXJSb2xlIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNpbmR5IEtyYWZvcmQiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjaW5keS5rcmFmb3JkIiwiZ2l2ZW5fbmFtZSI6IkNpbmR5IiwiZmFtaWx5X25hbWUiOiJLcmFmb3JkIiwiZW1haWwiOiJjaW5keS5rcmFmb3JkQGF6b24ifQ.tVZ1Ixcl28x9N21lkgXNab2jmnDwYFKnacUALZsphhnpNiVmADS6nmyfqXVUeLNB9UT7q-OhMIw7hod0Ruatr09IpZip6BKqeNpACgODIQ2UgYq4QYgxQzp2lbSLBgl-u-2sLucMYCriGyV7r8-gBipIiRM7CPtsi0waFCm0PyG6DODXzR4rzrLNRMrfVaclAceI6u7kDwG3g2WtwaWGIgwuLv3E625x-8qTt1L2CCoaKA3oRlsoe-vV9-zezJJBGRntf1nC8E93TMEGxau521hpFlRpt1SYO75bfQfdWzcF6lX6awkGIKoXOu2f5KdaLvEiBaqynJZ-19zXBR9OoA",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5067/games/7",
+					"raw": "http://localhost:5067/games/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -67,7 +145,7 @@
 					"port": "5067",
 					"path": [
 						"games",
-						"7"
+						"1"
 					]
 				}
 			},
@@ -76,10 +154,20 @@
 		{
 			"name": "Get Game by Id returns 404",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJvdnZvZUg5bU5jcHhpbEExcDhxT0FDNUpyYlEyR0lQR1hRbnllX1dpUkdjIn0.eyJleHAiOjE3MzkyODY4NDcsImlhdCI6MTczOTI4NjU0NywianRpIjoiYWI4YTVmYmEtYTU5YS00MDczLWJlNDAtMjdjZGE5M2FkZTczIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MzgwL3JlYWxtcy9HYW1lcnNXb3JsZCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjY2U2OWI2My0xMmNlLTQ0OGMtYmU3Ny02YWU2Y2MyYWY4NmYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJnYW1lcnN3b3JsZC1hcGkiLCJzaWQiOiJmZDZhMzc2ZS1mYzg1LTQ4OGUtYWFiYi0xZjgwOWU4M2U5YmIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWdhbWVyc3dvcmxkIiwiQ3VzdG9tZXJSb2xlIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNpbmR5IEtyYWZvcmQiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjaW5keS5rcmFmb3JkIiwiZ2l2ZW5fbmFtZSI6IkNpbmR5IiwiZmFtaWx5X25hbWUiOiJLcmFmb3JkIiwiZW1haWwiOiJjaW5keS5rcmFmb3JkQGF6b24ifQ.tVZ1Ixcl28x9N21lkgXNab2jmnDwYFKnacUALZsphhnpNiVmADS6nmyfqXVUeLNB9UT7q-OhMIw7hod0Ruatr09IpZip6BKqeNpACgODIQ2UgYq4QYgxQzp2lbSLBgl-u-2sLucMYCriGyV7r8-gBipIiRM7CPtsi0waFCm0PyG6DODXzR4rzrLNRMrfVaclAceI6u7kDwG3g2WtwaWGIgwuLv3E625x-8qTt1L2CCoaKA3oRlsoe-vV9-zezJJBGRntf1nC8E93TMEGxau521hpFlRpt1SYO75bfQfdWzcF6lX6awkGIKoXOu2f5KdaLvEiBaqynJZ-19zXBR9OoA",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5067/games/99999",
+					"raw": "http://localhost:5067/games/-1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -87,7 +175,7 @@
 					"port": "5067",
 					"path": [
 						"games",
-						"99999"
+						"-1"
 					]
 				}
 			},

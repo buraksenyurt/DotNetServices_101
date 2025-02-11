@@ -6,7 +6,7 @@ namespace GamersWorld.DataContext;
 public static class GamersWorldDbContextExtensions
 {
     public static IServiceCollection AddGamersWorld(this IServiceCollection services
-    , string connStr = "Host=localhost;Database=gamersworld;Username=scoth;Password=tiger")
+    , string connStr = "Host=localhost;Database=gamersworld;Username=johndoe;Password=somew0rds")
     {
         services.AddDbContext<GamersWorldDbContext>(options =>
             {
