@@ -124,6 +124,27 @@ mutation {
     }
 ```
 
+## Web Api Uygulamasında KeyCloak Kullanımı
+
+Repoda yapılan son değişiklikle Minimal Web API fonksiyonlarına yetkilendirme özelliği de eklendi. Buna göre bazı servis çağrıları deneyimlemek amacıyla farklı roller tarafından çalıştırılabilir durumda. Tabii Authorization mekanizması için kullanıcıların bir Authority tarafından doğrulanması ve sahip oldukları yetkilerin alınabilmesi de gerekiyor. Yetkili merci olarak **[Key Cloak](https://www.keycloak.org/)** ürünü kullanılmakta. Bu ürünün docker imajı da mevcut dolayısıyla docker-compose aracılığıyla çalıştırılabilir _(Detaylar için docker-compose dosyasına bakılabilir)_ Örnekte iki rol grubu söz konusu. **SuperRole** ve **CustomersRole**. **Key Cloak** tarafında yapacağımız işleri aşağıdaki gibi özetleyebilir.
+
+- Docker imajı başarılı bir şekilde başlatıldıktan sonra **localhost:8380/** adresinden sisteme admin/admin bilgileri ile girilir
+- Organizasyonumuzu veya etkil alanını belirten **Realm** oluşturulur. Bu senaryoda **GamersWorld** olarak isimlendirilmiştir.
+- Key Cloak'a gelecek uygulamalar birer istemcidir. Bu nedenle Clients sekmesinden yola çıkılarak bir client oluşturulur. **Client Id** için **gamersworld-api**, **client type** için **OpenID Connect** seçilebilir. Bu senaryoda **Client Authentication** seçeneği kapatılabilir(off). **Direct Grants Access Enabled** seçeneği **Enabled**'a çekilir (On), **Access Type** değeri ise **public** yapılarak client ayarları kaydedilir.
+- Bu işlemlerin ardından gerekli rol tanımlamaları yapılır. **Create Role** ile bu örneklerde kullanılan **SuperRole** ve **CustomersRole** isimli roller tanımlanır.
+- **Users** sekmesine geçilerek örnek kullanıcılar tanımlanır. Örnekte Scoth Tiger ve benzeri kullanıcılar tanımlanabilir. Kullanıcılar tanımlanırken **Role Mappings** sekmesinden de örnek rollere atama işlemleri gerçekleştirilir.
+
+Web Api hizmetlerinin kullanılabilmesi için kullanıcıların öncelikle doğrulanması _(Authenticate)_ ve rollerinin yüklendiği **token** bilgilerinin oluşturulması gerekir. Bunun için öncelikle **localhost:8380/realms/GamersWorld/protocol/openid-connect/token** adresine aşağıdaki örnek bilgilerle **Http POST** talebi gönderilir. Bu bilgiler Body kısmında **x-www-form-urlencoded**  formatında olacak şekilde girilir.
+
+```text
+Client Id     : gamersworld-api
+Grant Type    : password
+Username      : scoth.tiger
+Password      : 123456
+```
+
+Bir kullanıcının web api'den talepte bulunması hem doğrulamaya hem de yetkiye bağlıdır. Dolayısıyla kullanıcı öncelikle **KeyCloak** sistemine uğrayıp kullanıcı adı ve şifre girerek **gamersworld-api** isimli **client** için yetkilerini talep eder. **Realm** kullanılmasının bir sebebi de budur. Aynı kullanıcı farklı realm alanlarında farklı yetkilere sahip olacak şekilde tesis edilebilir ya da sadece tanımlı olduğu Realm içinde geçerli olabilir. Kullanıcı başarılı bir şekilde doğrulanmışsa bir **JWT** değeri üretilir. Çok doğal olarak servis çağrılarında bu token bilgisinin **Bearer Token** halinde pakete eklenmesi gerekir.
+
 ## Kaynaklar
 
 - Minimal Web API tasarımı için [şu öğretiye](https://learn.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-8.0&tabs=visual-studio-code) bakılabilir.
